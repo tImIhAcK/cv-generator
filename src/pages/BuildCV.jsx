@@ -3,7 +3,14 @@ import Stepper from "../components/Stepper";
 import StepperControl from "../components/StepperControl";
 import StepperContext from "../context/StepperContext";
 
-import { PersonalInfo, Summary, Experience, Education, Final } from "../forms";
+import {
+  PersonalInfo,
+  Summary,
+  Experience,
+  Education,
+  Final,
+  Skills,
+} from "../forms";
 
 const BuildCV = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -14,6 +21,7 @@ const BuildCV = () => {
     "Personal Information",
     "Experience",
     "Education",
+    "Skills",
     "Summary",
     "Completed",
   ];
@@ -27,8 +35,10 @@ const BuildCV = () => {
       case 3:
         return <Education />;
       case 4:
-        return <Summary />;
+        return <Skills />;
       case 5:
+        return <Summary />;
+      case 6:
         return <Final />;
       default:
     }
